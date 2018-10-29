@@ -1,0 +1,17 @@
+<h1>Team Management</h1>
+
+<!-- teamLeader-details -->
+<div *ngIf="teamLeader">
+  <h2><small>Team Leader: </small>{{teamLeader.userName}}</h2>
+  <img *ngIf="teamLeader.profileImageName" src="{{global.UPLOADS}}/UsersProfiles/{{teamLeader.profileImageName}}">
+  <i *ngIf="!teamLeader.profileImageName" class="fa fa-user-circle-o"></i>
+  <h3>Team Workers:</h3>
+</div>
+
+<!-- workerList that under this teamLeader -->
+<ul>
+  <li *ngFor="let teamWorker of teamWorkers">{{teamWorker.userName}}</li>
+</ul>
+
+<!-- belong extra workers under this teamLeader -->
+<app-select-workers *ngIf="extraWorkers" [workers]="extraWorkers" [title]="'Add extra team workers:'" [isTeamManagement]="true" (selectedWorkerEvent)="submit($event)"></app-select-workers>

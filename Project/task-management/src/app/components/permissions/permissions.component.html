@@ -1,0 +1,5 @@
+<h2>All projects of the team that the worker belings to:</h2>
+<ul>
+  <li *ngFor="let project of teamProjects">{{project.projectName}}</li>
+</ul>
+<app-permission-list [user]="user"></app-permission-list>

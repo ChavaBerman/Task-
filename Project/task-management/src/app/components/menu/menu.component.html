@@ -1,0 +1,10 @@
+<div *ngIf="menu" class="container">
+  <ul class="nav navbar-nav">
+    <li *ngFor="let item of menu" routerLinkActive="active">
+      <a routerLink="{{item.routing}}">{{item.name}}</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="/taskManagement/login" (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</div>

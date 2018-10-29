@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let workerHour of workerHours">
+    <span>{{workerHour.project.projectName}}</span>
+    <span>{{workerHour.numHours}}</span>
+  </li>
+</ul>
+<button (click)="sendEmail()">Send Email</button>

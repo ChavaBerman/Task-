@@ -1,0 +1,122 @@
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\bin\Debug\Client-WinForm.exe.config
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\bin\Debug\Client-WinForm.exe
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\bin\Debug\Client-WinForm.pdb
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client-WinForm.csprojAssemblyReference.cache
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.Properties.Resources.resources
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client-WinForm.csproj.GenerateResource.cache
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client-WinForm.csproj.CoreCompileInputs.cache
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client-WinForm.exe
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client-WinForm.pdb
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\bin\Debug\Newtonsoft.Json.dll
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\bin\Debug\Newtonsoft.Json.xml
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client-WinForm.csproj.CopyComplete
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.ManagementTaskLogin.resources
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.TeamHeadScreen.resources
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.AddProject.resources
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.Welcome.resources
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.AddWorker.resources
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.ManagerMainScreen.resources
+S:\תמי פרישמן\Final-project\Client-WinForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.ManageUsers.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Client-WinForm.exe.config
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Client-WinForm.exe
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Client-WinForm.pdb
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Newtonsoft.Json.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Newtonsoft.Json.xml
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client-WinForm.csprojAssemblyReference.cache
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.ManagementTaskLogin.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.AddProject.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.AddWorker.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.ManagerMainScreen.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Properties.Resources.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Welcome.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client-WinForm.csproj.GenerateResource.cache
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client-WinForm.csproj.CoreCompileInputs.cache
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client-WinForm.csproj.CopyComplete
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client-WinForm.exe
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client-WinForm.pdb
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Google.Protobuf.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\MySql.Data.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Google.Protobuf.xml
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\MySql.Data.xml
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.SetPermission.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.ReportViewer.Common.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.ReportViewer.Design.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.ReportViewer.WebDesign.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.SqlServer.Types.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\EnvDTE.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\stdole.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\Microsoft.MSXML.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\de\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\es\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\it\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.EditWorkerProfile.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.ManageReports.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Manager.TeamManage.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.TeamHead.HoursChart.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.TeamHead.TeamHeadScreen.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.TeamHead.ProjectState.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.TeamHead.UpdateHours.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.WorkerScreen.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Worker.MyTasks.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Worker.MyHours.resources
+S:\ChavyBerman\client-winForm\Client-WinForm\obj\Debug\Client_WinForm.Worker.ApplyToManager.resources

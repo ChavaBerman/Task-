@@ -1,0 +1,8 @@
+<div class="group" *ngIf="projects">
+  <select [formControl]="projectControl" id="project" class="inputMaterial" (change)="addPermission()">
+    <option *ngFor="let project of projects" [ngValue]="project">{{project.projectName}}</option>
+  </select>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label for="project" [ngClass]="{'label':true,'full':projectControl.value!=''}">Project</label>
+</div>

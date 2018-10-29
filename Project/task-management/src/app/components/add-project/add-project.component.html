@@ -1,0 +1,84 @@
+<div class="box">
+  <div class="header">
+    <div class="thumbur">
+      <div class="icon-lock"></div>
+    </div>
+    <hr/>
+    <div *ngIf="projectFormGroup">
+      <h1>Add a project</h1>
+      <form [formGroup]="projectFormGroup" (ngSubmit)="onSubmit()">
+
+        <!-- projectName -->
+        <div class="group">
+          <input formControlName="projectName" id="projectName" class="inputMaterial">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="projectName" [ngClass]="{'label':true,'full':projectName.value!=''}">projectName:</label>
+          <div *ngIf="projectName.errors&&projectName.touched">
+            <p *ngFor="let err of objectHolder.values(projectName.errors)" class="myAlert">{{err}}</p>
+          </div>
+        </div>
+
+        <!-- customerId -->
+        <div class="group">
+          <select formControlName="customerId" id="customerId" class="inputMaterial">
+            <option *ngFor="let customer of customers" [ngValue]="customer.customerId">{{customer.customerName}}</option>
+          </select>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="customerId" [ngClass]="{'label':true,'full':customerId.value!=''}">Customer</label>
+          <div *ngIf="customerId.errors&&customerId.touched">
+            <p *ngFor="let err of objectHolder.values(customerId.errors)" class="myAlert">{{err}}</p>
+          </div>
+        </div>
+
+        <!-- teamLeaderId -->
+        <div class="group">
+          <select formControlName="teamLeaderId" id="teamLeaderId" class="inputMaterial" (change)="onTeamLeaderChange()">
+            <option *ngFor="let teamLeader of teamLeaders" [ngValue]="teamLeader.userId">{{teamLeader.userName}}</option>
+          </select>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="teamLeaderId" [ngClass]="{'label':true,'full':teamLeaderId.value!=''}">team Leader</label>
+          <div *ngIf="teamLeaderId.errors&&teamLeaderId.touched">
+            <p *ngFor="let err of objectHolder.values(teamLeaderId.errors)" class="myAlert">{{err}}</p>
+          </div>
+        </div>
+
+        <!-- permissions -->
+        <app-select-workers *ngIf="extraWorkers" [workers]="extraWorkers" [title]="'Add permission to extra workers:'" (selectedWorkerEvent)="getSelectedWorkers($event)"></app-select-workers>
+
+        <!-- departmentsHours -->
+        <div *ngIf="departments" formGroupName="totalHours">
+          <div class="group" *ngFor="let control of totalHours.controls;let i=index">
+            <input type="number" formControlName="{{i}}" id="{{i}}" class="inputMaterial" min="0">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="{{control}}" [ngClass]="{'label':true,'full':totalHours.controls[i].value!=''}">{{departments[i].departmentName}}:</label>
+            <div *ngIf="totalHours.controls[i].errors&&totalHours.controls[i].touched">
+              <p *ngFor="let err of objectHolder.values(totalHours.controls[i].errors)" class="myAlert">{{err}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- totalHours -->
+        <label>Total hours: {{getTotalHours()}}</label>
+
+        <!-- startDate and endDate -->
+        <!-- <div class="group" *ngFor="let control of objectHolder.keys(projectFormGroup.controls)| slice:4:6">
+          <input type="date" formControlName="{{control}}" id="{{control}}" class="inputMaterial">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="{{control}}" [ngClass]="{'label':true,'full':projectFormGroup.controls[control].value!=''}">{{control}}:</label>
+          <div *ngIf="projectFormGroup.controls[control].errors&&projectFormGroup.controls[control].touched">
+            <p *ngFor="let err of objectHolder.values(projectFormGroup.controls[control].errors)" class="myAlert">{{err}}</p>
+          </div>
+        </div> -->
+        <app-date-picker [date]="startDate"></app-date-picker>
+
+        <app-date-picker [date]="endDate"></app-date-picker>
+
+        <button type="submit" class="button col-md-offset-2 col-md-8" [disabled]="projectFormGroup.invalid">Save</button>
+
+      </form>
+    </div>
+  </div>

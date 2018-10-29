@@ -1,0 +1,9 @@
+<div *ngIf="worker">
+    <p>worker:{{worker.userName}}</p>
+    <p>department:{{worker.department.departmentName}}</p>
+</div>
+<div *ngIf="workerHoursList">
+    <app-worker-hours-list [workerHoursList]="workerHoursList"></app-worker-hours-list>
+    <app-add-worker-hours [workerHoursList]="workerHoursList"></app-add-worker-hours>
+</div>
+<button (click)="saveChanges()">Save Changes</button>

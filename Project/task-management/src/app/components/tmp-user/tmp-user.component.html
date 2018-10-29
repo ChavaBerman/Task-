@@ -1,0 +1,13 @@
+<div>
+    <h3>{{user.userName}}</h3>
+    <img *ngIf="user.profileImageName" src="{{global.UPLOADS}}/UsersProfiles/{{user.profileImageName}}">
+    <i *ngIf="!user.profileImageName" class="fa fa-user-circle-o"></i>
+    <h5 *ngIf="user.departmentId">department: {{user.department.departmentName}}</h5>
+    <h5 *ngIf="!user.departmentId">Team Leader</h5>
+    <button *ngIf="listKind==eListKind.ALL_WORKERS" (click)="edit()">Edit</button>
+    <button *ngIf="listKind==eListKind.ALL_WORKERS" (click)="showConfirm()">Delete</button>
+    <button *ngIf="listKind==eListKind.ALL_WORKERS" (click)="definePermissions()">Define Permissions</button>
+    <button *ngIf="listKind==eListKind.TEAM_LEADERS" (click)="teamManagement()">Team Management</button>
+    <button *ngIf="listKind==eListKind.TEAM_WORKERS" (click)="updateHours()">Update Hours</button>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="box">
+  <div class="header">
+    <div class="thumbur">
+      <div class="icon-lock"></div>
+    </div>
+    <hr/>
+      
+    <form [formGroup]="userFormGroup" (ngSubmit)="onSubmit()">
+        
+        <div class="group" *ngFor="let control of objectHolder.keys(userFormGroup.controls)| slice:0:end;let i=index">
+          <input type="{{types[i]}}" formControlName="{{control}}" id="{{control}}" class="inputMaterial">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="{{control}}" [ngClass]="{'label':true,'full':userFormGroup.controls[control].value!=''}">{{control}}:</label>
+          <div *ngIf="userFormGroup.controls[control].errors&&userFormGroup.controls[control].touched">
+            <p *ngFor="let err of objectHolder.values(userFormGroup.controls[control].errors)" class="myAlert">{{err}}</p>
+          </div>
+        </div>
+        
+        <div *ngIf="!this.isTeamLeader.value" class="group">
+          <select formControlName="departmentId" id="departmentId" class="inputMaterial">
+            <option *ngFor="let department of departments" [ngValue]="department.departmentId">{{department.departmentName}}</option>
+          </select>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="departmentId" [ngClass]="{'label':true,'full':departmentId.value!=''}">Department</label>
+          <div *ngIf="departmentId.errors&&departmentId.touched">
+            <p *ngFor="let err of objectHolder.values(departmentId.errors)" class="myAlert">{{err}}</p>
+          </div>
+        </div>
+
+        <div *ngIf="!this.isTeamLeader.value" class="group">
+          <select formControlName="teamLeaderId" id="teamLeaderId" class="inputMaterial">
+            <option *ngFor="let teamLeader of teamLeaders" [ngValue]="teamLeader.userId">{{teamLeader.userName}}</option>
+          </select>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="teamLeaderId" [ngClass]="{'label':true,'full':teamLeaderId.value!=''}">team Leader</label>
+          <div *ngIf="teamLeaderId.errors&&teamLeaderId.touched">
+            <p *ngFor="let err of objectHolder.values(teamLeaderId.errors)" class="myAlert">{{err}}</p>
+          </div>
+        </div>
+        
+        <label>Is a team-leader</label>
+        <input type="checkbox" formControlName="isTeamLeader" (change)="teamLeader()">
+       
+        <app-upload-img (eventImage)="getImage($event)" [locationUrl]="imageUrl"></app-upload-img>
+
+        <button type="submit" class="button col-md-offset-2 col-md-8" [disabled]="userFormGroup.invalid||isExistEmail || isExistPassword">{{caption}}</button>
+      
+      </form>
+  </div>

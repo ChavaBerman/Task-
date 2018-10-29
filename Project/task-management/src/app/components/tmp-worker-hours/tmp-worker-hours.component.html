@@ -1,0 +1,5 @@
+<li>
+  <span>{{workerHours.project.projectName}}</span>
+  <input [formControl]="numHoursControl" (change)="changeWorkerHours()">
+  <button (click)="deleteWorkerHours()">delete</button>
+</li>

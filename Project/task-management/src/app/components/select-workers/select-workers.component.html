@@ -1,0 +1,23 @@
+<div>
+  <h3>{{title}}</h3>
+  <!-- workers-dropDownList -->
+  <div class="group">
+    <select [formControl]="selectedWorkerControl" id="worker" class="inputMaterial" (change)="addWorker()">
+      <option *ngFor="let worker of workers" [ngValue]="worker">{{worker.userName}}</option>
+    </select>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label for="worker" [ngClass]="{'label':true,'full':selectedWorkerControl.value!=''}">Worker</label>
+  </div>
+
+  <h3>Selected:</h3>
+  <!-- selected workers -->
+  <ul>
+    <div *ngFor="let selectedWorker of selectedWorkers">
+      <button (click)="removeWorker(selectedWorker)">-</button>
+      <li>{{selectedWorker.userName}}</li>
+    </div>
+  </ul>
+
+  <button *ngIf="isTeamManagement" (click)="submit()">save</button>
+</div>

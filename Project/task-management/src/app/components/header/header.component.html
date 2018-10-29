@@ -1,0 +1,17 @@
+
+<header class="row">
+   <app-menu [menu]="menu" class="col-md-offset-2 col-md-2"></app-menu>
+  
+    <div class="user" *ngIf="localStorage.getItem(global.USER)">
+      <span class=" col-md-offset-4 userName">Hello {{ json.parse(localStorage.getItem(global.USER)).userName}}</span>
+      <div>
+        <img *ngIf="json.parse(localStorage.getItem(global.USER)).profileImageName" src="{{global.UPLOADS}}/UsersProfiles/{{json.parse(localStorage.getItem(global.USER)).profileImageName}}">
+        <i *ngIf="!json.parse(localStorage.getItem(global.USER)).profileImageName" class="fa fa-user-circle-o"></i>
+      </div>
+    </div>
+  
+    <div class="user" *ngIf="!localStorage.getItem(global.USER)">
+      <span class=" col-md-offset-4 userName">Guest</span>
+      <i class="fa fa-user-circle-o"></i>
+    </div>
+  </header>
