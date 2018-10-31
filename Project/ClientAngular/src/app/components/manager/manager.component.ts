@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../shared/services/user.service';
+
 
 @Component({
   selector: 'app-manager',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerComponent implements OnInit {
 
-  constructor() { }
+  currentuser: JSON;
+
+  constructor(private userservice: UserService) { }
 
   ngOnInit() {
+    //take value from local storage 
+    if (localStorage['currentuser'])
+      this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
   }
 
+  logOut() {
+    //log out the user
+    this.userservice.logout();
+  }
 }

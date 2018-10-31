@@ -1,37 +1,44 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http'
 import { Observable, Subject } from 'rxjs';
-import { Global} from '../global';
+import { Global } from '../global';
 import { Router } from "../../../../node_modules/@angular/router";
-import{User} from '../../imports';
+import { User } from '../imports';
 
 @Injectable()
 export class UserService {
-constructor(private http:HttpClient,private router:Router){
+    logout(): any {
+        throw new Error("Method not implemented.");
+    }
+    constructor(private http: HttpClient, private router: Router) {
 
-}
+    }
     //----------------PROPERTIRS-------------------
-
+    currentUserSubject = new Subject();
     basicURL: string = Global.BASE_ENDPOINT;
 
     login(email: string, password: string): Observable<any> {
         let url: string = `${this.basicURL}/loginByPassword`;
         let data = { UserName: email, Password: password };
         return this.http.post(url, data);
-        
+
     }
 
-    navigate(user:User){
-        switch (user.statusObj.statusName) {
+    navigate(user: User) {
+
+        //update current user by subject
+        this.currentUserSubject.next(user);
+
+        switch (user.statusObj.StatusName) {
             case 'Manager':
-                this.router.navigate(['taskManagement/Manager'])
+                this.router.navigate(['taskManagement/manager'])
                 break;
-                case 'TeamHead':
+            case 'TeamHead':
                 this.router.navigate(['taskManagement/TeamHead'])
                 break;
-            default:this.router.navigate(['taskManagement/Worker'])
+            default: this.router.navigate(['taskManagement/Worker'])
                 break;
         }
     }
-    
+
 }

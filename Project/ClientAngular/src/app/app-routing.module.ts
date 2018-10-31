@@ -1,16 +1,34 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import {LoginComponent, 
-       ManagerComponent } from './imports';
+       ManagerComponent ,
+    AddWorkerComponent,
+    ManageTeamComponent,
+    ManageReportsComponent,
+    AddProjectComponent,
+    EditWorkerComponent,
+    SetPermissionComponent,
+    ManagerHomeComponent
+
+} from './shared/imports';
 
 const appRoutes: Routes = [
     {
+        
         path: 'taskManagement', children: [
             {
                 path: 'login', component: LoginComponent
             },
             {
-              path:'manager',component:ManagerComponent
+              path:'manager',component:ManagerComponent, children: [
+                  {path:'manage-reports',component:ManageReportsComponent},
+                  {path:'',component:ManagerHomeComponent},
+                  {path:'manage-team',component:ManageTeamComponent},
+                  {path:'manage-users/add-worker',component:AddWorkerComponent},
+                  {path:'manage-users/set-permission',component:SetPermissionComponent},
+                  {path:'manage-users/edit-worker',component:EditWorkerComponent},
+                  {path:'add-project',component:AddProjectComponent}
+              ]
             }
             // {
             //     path: 'manager', component: ManagerComponent, children: [
@@ -88,8 +106,8 @@ const appRoutes: Routes = [
         ]
     },
     { path: '', component: LoginComponent },
-    // otherwise redirect to LoginComponent
-    { path: '**', component: LoginComponent }
+    // // otherwise redirect to LoginComponent
+     { path: '**', component: LoginComponent }
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(appRoutes);
