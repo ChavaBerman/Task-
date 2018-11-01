@@ -2,10 +2,12 @@
 
 //-----------------Models-----------------
 export {User}from './models/user'
+export {Status}from './models/Status'
 
 
 //---------------Services----------------s
 export {UserService} from './services/user.service'
+export {StatusService} from './services/status.service'
 
 
 
@@ -26,3 +28,5 @@ export { ManagerHomeComponent } from '../components/manager-home/manager-home.co
 
 //-----------validations-----------------
 export {checkStringLength,confirmPassword,checkEmail} from './validaitors/validators'
+
+//----------Others--------------------

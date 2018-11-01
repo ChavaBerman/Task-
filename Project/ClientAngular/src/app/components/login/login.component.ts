@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ValidatorFn } from '@angular/forms';
-import{checkStringLength} from '../../../app/shared/validaitors/validators'
-import{UserService} from '../../shared/services/user.service'
+import { checkStringLength } from '../../../app/shared/validaitors/validators'
+import { UserService } from '../../shared/services/user.service'
 import * as sha256 from 'async-sha256'
 import { Router } from '../../../../node_modules/@angular/router';
 @Component({
@@ -14,34 +14,33 @@ export class LoginComponent {
   //----------------PROPERTIRS-------------------
   formGroup: FormGroup;
   obj: typeof Object = Object;
-  hashPassword:string;
+  hashPassword: string;
 
   //----------------CONSTRUCTOR------------------
-  constructor(private userservice:UserService,private router:Router) {
+  constructor(private userservice: UserService, private router: Router) {
     let formGroupConfig = {
-      userName: new FormControl("",checkStringLength("name", 3, 15)),
-      userPassword: new FormControl( "",checkStringLength("password", 6, 10))
+      userName: new FormControl("", checkStringLength("name", 3, 15)),
+      userPassword: new FormControl("", checkStringLength("password", 6, 10))
     };
 
     this.formGroup = new FormGroup(formGroupConfig);
   }
 
   //----------------METHODS-------------------
-async  submitLogin() {
-    console.log(this.formGroup.value);
-    console.log(this.formGroup.controls);
-    alert(this.formGroup.status)
-   console.log("pass "+this.formGroup.controls["userPassword"].value);
+  async  submitLogin() {
 
-  this.hashPassword = await sha256(this.formGroup.controls["userPassword"].value);
-  this.userservice.login(this.formGroup.controls["userName"].value,this.hashPassword).subscribe((res)=>{
-    
+
+    this.hashPassword = await sha256(this.formGroup.controls["userPassword"].value);
+    this.userservice.login(this.formGroup.controls["userName"].value, this.hashPassword).subscribe((res) => {
+
+      this.userservice.currentUserSubject.next(res);
+      localStorage.setItem("user", JSON.stringify(res));
       this.userservice.navigate(res);
-      localStorage.setItem("user",JSON.stringify(res));
-      
-      }
-  )};
- 
+
+    }
+    )
+  };
+
 
 
 

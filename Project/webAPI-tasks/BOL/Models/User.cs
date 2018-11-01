@@ -27,7 +27,7 @@ namespace BOL
         [UniquePassword]
         // [MinLength(64), MaxLength(64)]
         public string Password { get; set; }
-
+        private string confirmPassword { set; get; }
         [Required(ErrorMessage = "email is required")]
         [UniqueEmail]
         [EmailAddress]

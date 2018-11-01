@@ -41,4 +41,19 @@ export class UserService {
         }
     }
 
+    getAllTeamHeads(): Observable<any> {
+        let url: string = `${this.basicURL}/Users/GetAllTeamHeads`;
+        return this.http.get(url);
+    }
+    getCurrentUser() {
+        return JSON.parse(localStorage.getItem("user"));
+    }
+    addWorker(user:User): Observable<any> {
+        let url: string = `${this.basicURL}/addUser`;
+        let data = {value:user};
+        return this.http.post(url, user);
+
+    }
+
+
 }

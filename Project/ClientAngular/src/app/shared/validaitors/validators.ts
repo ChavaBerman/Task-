@@ -37,9 +37,10 @@ import { ValidatorFn, FormGroup } from "@angular/forms";
 * @return array of validators
 */
 export function checkEmail(): Array<ValidatorFn> {
+  let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
   return [
     f => !f.value ? { "val": `Email is required` } : null,
-    f=>f.value&&f.value.match( "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$")?{ "val": `email address is not valid` } : null
+    f=>f.value&&!f.value.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)?{ "val": `email address is not valid` } : null
 
   ];
 }

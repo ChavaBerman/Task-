@@ -17,7 +17,8 @@ import {
    ManageReportsComponent,
    ManageTeamComponent,
    SetPermissionComponent,
-   ManagerHomeComponent
+   ManagerHomeComponent,
+   StatusService
   } from './shared/imports';
 
 
@@ -48,7 +49,7 @@ import {
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService,StatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
