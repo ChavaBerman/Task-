@@ -1,0 +1,40 @@
+
+<h2>add project</h2>
+<form  class="col-md-offset-3" [formGroup]="formGroup" (ngSubmit)="addProject()">
+   
+    <input type="text" placeholder="Enter projectName" formControlName="projectName" name="name">
+    <div class="help-block" *ngIf="formGroup.controls['projectName'].errors&&formGroup.controls['projectName'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['projectName'].errors)">{{err}}</p>
+    </div>
+
+    <input type="text" placeholder="Enter customerName" formControlName="customerName"  name="customerName">
+    <div class="help-block" *ngIf="formGroup.controls['customerName'].errors&&formGroup.controls['customerName'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['customerName'].errors)">{{err}}</p>
+    </div>
+
+    <input type="number" placeholder="Enter numHourForProject" formControlName="numHourForProject"  name="numHourForProject" min="1" max="20000">
+    <div class="help-block" *ngIf="formGroup.controls['numHourForProject'].errors&&formGroup.controls['numHourForProject'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['numHourForProject'].errors)">{{err}}</p>
+    </div>
+
+    <input type="date" placeholder="Enter dateBegin" formControlName="dateBegin"  name="dateBegin" >
+    <div class="help-block" *ngIf="formGroup.controls['dateBegin'].errors&&formGroup.controls['dateBegin'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['dateBegin'].errors)">{{err}}</p>
+    </div>
+
+    <input type="date" placeholder="Enter dateEnd" formControlName="dateEnd"  name="dateEnd" >
+    <div class="help-block" *ngIf="formGroup.controls['dateEnd'].errors&&formGroup.controls['dateEnd'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['dateEnd'].errors)">{{err}}</p>
+    </div>
+
+   <select formControlName="idManager" *ngIf="teamLeaders&&teamLeaders.length>0" >
+       <option *ngFor="let team of teamLeaders" [value]="team.userId">{{team.userName}}</option>
+    </select> 
+
+   <div *ngFor="let department of departments">
+       <app-hour-for-department [department]="department" (numDepartment)='numDepartment($event)'></app-hour-for-department>
+   </div>
+
+
+    <button type="submit" class="btn login-btn mb-15" [disabled]="formGroup.invalid" >add User</button>
+</form>

@@ -1,0 +1,8 @@
+
+
+<div *ngFor="let worker of workesNotinProject">
+    <label>{{worker.userName}} </label>
+    <input type="checkbox" [value]="worker" (change)="changeWorker(worker)">
+   
+</div>
+<input type="button" value="save" (click)="saveChange()">

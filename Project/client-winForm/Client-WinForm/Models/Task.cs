@@ -15,7 +15,7 @@ namespace Client_WinForm.Models
 
         [Range(0, int.MaxValue)]
         [DefaultValue(0)]
-        public int ReservingHours { get; set; }
+        public decimal ReservingHours { get; set; }
 
         [Range(1, int.MaxValue)]
         [DefaultValue(1)]

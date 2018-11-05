@@ -7,6 +7,7 @@ import { User } from '../imports';
 
 @Injectable()
 export class StatusService {
+ 
     constructor(private http: HttpClient, private router: Router) {
 
     }

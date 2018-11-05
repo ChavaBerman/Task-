@@ -18,7 +18,7 @@ export class UserService {
     basicURL: string = Global.BASE_ENDPOINT;
 
     login(email: string, password: string): Observable<any> {
-        let url: string = `${this.basicURL}/loginByPassword`;
+        let url: string = `${this.basicURL}/Users/loginByPassword`;
         let data = { UserName: email, Password: password };
         return this.http.post(url, data);
 
@@ -29,7 +29,7 @@ export class UserService {
         //update current user by subject
         this.currentUserSubject.next(user);
 
-        switch (user.statusObj.StatusName) {
+        switch (user.statusObj.statusName) {
             case 'Manager':
                 this.router.navigate(['taskManagement/manager'])
                 break;
@@ -49,10 +49,24 @@ export class UserService {
         return JSON.parse(localStorage.getItem("user"));
     }
     addWorker(user:User): Observable<any> {
-        let url: string = `${this.basicURL}/addUser`;
-        let data = {value:user};
+        let url: string = `${this.basicURL}/Users/addUser`;
         return this.http.post(url, user);
-
+    }
+    getAllowedWorkers(idTeamHead:number): Observable<any> {
+        let url: string = `${this.basicURL}/Users/GetAllowedWorkers/${idTeamHead}`;
+        return this.http.get(url);
+    }
+    getAllWorkers(): Observable<any> {
+        let url: string = `${this.basicURL}/Users/GetAllWorkers`;
+        return this.http.get(url);
+    }
+    updateWorker(user:User): Observable<any> {
+        let url: string = `${this.basicURL}/Users/UpdateUser`;
+        return this.http.put(url, user);
+    }
+    removeUser(id:number){
+        let url: string = `${this.basicURL}/Users/RemoveUser/${id}`;
+        return this.http.delete(url);
     }
 
 

@@ -1,0 +1,9 @@
+<h1>
+  {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
+</h1>
+<button (click)="startTimer()" >start</button> 
+<button (click)="stopTimer()">stop</button> 
+
+
+<!-- {{timer}}
+<button (click)="startStop()">Start/Stop</button> -->

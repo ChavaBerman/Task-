@@ -1,0 +1,23 @@
+<ng4-loading-spinner> </ng4-loading-spinner>
+<div >
+
+  <div class="container">
+      <h1>Welcome</h1>
+      <form class="form" [formGroup]="formGroup" (ngSubmit)="submitRegister()" name="formUser">
+          <input type="text" placeholder="Enter Username" formControlName="userName" name="name">
+          <div class="help-block" *ngIf="formGroup.controls['userName'].errors&&formGroup.controls['userName'].touched">
+              <p *ngFor="let err of obj.values(formGroup.controls['userName'].errors)">{{err}}</p>
+          </div>
+          <input type="password" placeholder="Enter password" formControlName="password"  name="password">
+          <div class="help-block" *ngIf="formGroup.controls['password'].errors&&formGroup.controls['password'].touched">
+              <p *ngFor="let err of obj.values(formGroup.controls['password'].errors)">{{err}}</p>
+          </div>
+          <label>remember me</label>
+          <input type="checkbox" value="remember me" formControlName="remember">
+          <button type="submit" id="login-button" [disabled]="formGroup.invalid">Login</button>
+      </form>
+  </div>
+
+</div>
+
+

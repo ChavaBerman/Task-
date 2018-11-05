@@ -17,7 +17,7 @@ namespace BOL.Validations
                 //Take userId and email of the user parameter
                 DateTime dateBegin = (validationContext.ObjectInstance as Project).DateBegin;
           
-                if (dateBegin>=((DateTime)value))
+                if (dateBegin>((DateTime)value))
                 {
                     ErrorMessage = "date end project grate than date begin project";
                     validationResult = new ValidationResult(ErrorMessageString);

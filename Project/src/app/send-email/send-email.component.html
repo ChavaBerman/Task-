@@ -1,0 +1,5 @@
+
+<textarea (input)="enableSend()" [(ngModel)]="message.message"></textarea>
+<button [disabled]="!isSend" (click)="sendEmail()">send email</button>
+
+

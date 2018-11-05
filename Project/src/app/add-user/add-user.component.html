@@ -1,0 +1,35 @@
+<h2>add user</h2>
+<form  class="col-md-offset-3" [formGroup]="formGroup" (ngSubmit)="addUser()">
+    <!-- <div class="imgcontainer">
+        <img src="../../../assets/avatar2.png" alt="Avatar" class="avatar">
+    </div> -->
+    <input type="text" placeholder="Enter Username" formControlName="userName" name="name">
+    <div class="help-block" *ngIf="formGroup.controls['userName'].errors&&formGroup.controls['userName'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['userName'].errors)">{{err}}</p>
+    </div>
+
+    <input type="password" placeholder="Enter password" formControlName="password"  name="password">
+    <div class="help-block" *ngIf="formGroup.controls['password'].errors&&formGroup.controls['password'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['password'].errors)">{{err}}</p>
+    </div>
+
+    <input type="email" placeholder="Enter email" formControlName="email" name="email">
+    <div class="help-block" *ngIf="formGroup.controls['email'].errors&&formGroup.controls['email'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['email'].errors)">{{err}}</p>
+    </div>
+
+    <input type="number" placeholder="Enter numHoursWork" formControlName="numHoursWork"  name="numHoursWork" min="4" max="12">
+    <div class="help-block" *ngIf="formGroup.controls['numHoursWork'].errors&&formGroup.controls['numHoursWork'].touched">
+        <p *ngFor="let err of obj.values(formGroup.controls['numHoursWork'].errors)">{{err}}</p>
+    </div>
+
+    <select  formControlName="departmentId" (change)="chooseDepartment($event)">
+      <option *ngFor="let department of departments"  [value]="department.id">{{department.department}}</option>
+    </select>
+
+   <select formControlName="managerId" *ngIf="userByDepartment.length>0" >
+       <option *ngFor="let manager of userByDepartment" [value]="manager.userId">{{manager.userName}}</option>
+    </select> 
+
+    <button type="submit" class="btn login-btn mb-15" [disabled]="formGroup.invalid" >add User</button>
+</form>

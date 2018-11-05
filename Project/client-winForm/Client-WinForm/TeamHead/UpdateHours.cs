@@ -54,7 +54,7 @@ namespace Client_WinForm.TeamHead
             {
                 decimal reservingHours = (decimal)dataGridView1.Rows[e.RowIndex].Cells["ReservingHours"].Value;
                 Models.Task task = tasks[e.RowIndex];
-                task.GivenHours = reservingHours;
+                task.ReservingHours = reservingHours;
              if(TaskRequests.UpdateTask(task))
                     MessageBox.Show("Updated!");
                 else MessageBox.Show("Failed to update...");

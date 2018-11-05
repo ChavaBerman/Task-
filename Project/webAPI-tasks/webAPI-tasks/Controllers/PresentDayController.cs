@@ -16,79 +16,30 @@ namespace webAPI_tasks.Controllers
     public class PresentDayController : ApiController
     {
         [HttpGet]
-        [Route("api/getAllPressentGroupByUser")]
-        /// <summary>
-        /// get all presentDays group by user
-        /// </summary>
-        /// <returns>list presentDays group by user</returns>
-
+        [Route("api/PresentDay/getAllPressentGroupByUser")]
         public HttpResponseMessage GetAllPressentGroupByUser()
         {
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new ObjectContent<List<PresentDay>>(LogicPresentDay.GetAllPresents(), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicPresentDay.GetAllPresents());
         }
 
 
         [HttpGet]
         [Route("api/getAllPressentGroupByUserAndProject")]
-        /// <summary>
-        /// get all presentDays group by user
-        /// </summary>
-        /// <returns>list presentDays group by user</returns>
-
         public HttpResponseMessage getAllPressentGroupByUserAndProject()
         {
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new ObjectContent<List<PresentDay>>(LogicPresentDay.GetAllPresents(), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicPresentDay.GetAllPresents());
         }
 
-
-        //[HttpGet]
-        //[Route("api/getPressentUserByProject/{idWorker}/{idProject}")]
-        // GET: api/PresentDay/5/5
-        /// <summary>
-        /// get presentDay by idWorker and idProject
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        //public HttpResponseMessage getPressentUserByProject(int idWorker, int idProject)
-        //{
-        //    return new HttpResponseMessage(HttpStatusCode.OK)
-        //    {
-        //        Content = new ObjectContent<PresentDay>(LogicPresentDay.GetPresent(idWorker, idProject), new JsonMediaTypeFormatter())
-        //    };
-        //}
-
-        //[HttpGet]
-        //[Route("api/getAllPressentsUser/{idWorker}")]
-        //public HttpResponseMessage Get(int idWorker)
-        //{
-        //    return new HttpResponseMessage(HttpStatusCode.OK)
-        //    {
-        //        Content = new ObjectContent<PresentDay>(LogicPresentDay.GetPresentByWorkerId(idWorker), new JsonMediaTypeFormatter())
-        //    };
-        //}
         [HttpPost]
-        [Route("api/AddPresent")]
+        [Route("api/PresentDay/AddPresent")]
         public HttpResponseMessage AddPresent([FromBody]PresentDay value)
         {
-            
             if (ModelState.IsValid)
             {
                 int id = LogicPresentDay.AddPresent(value);
-                if (id != 0)
-                    return new HttpResponseMessage(HttpStatusCode.Created)
-                    {
-                        Content = new ObjectContent<int>(id, new JsonMediaTypeFormatter())
-                    };
-                return new HttpResponseMessage(HttpStatusCode.BadRequest)
-                {
-                    Content = new ObjectContent<String>("Can not add to DB", new JsonMediaTypeFormatter())
-                };
+                return id != 0 ?
+                      Request.CreateResponse(HttpStatusCode.OK, id) :
+                      Request.CreateResponse(HttpStatusCode.BadRequest, "Can not add to DB");
             };
 
             List<string> ErrorList = new List<string>();
@@ -98,26 +49,20 @@ namespace webAPI_tasks.Controllers
                 foreach (var err in item.Errors)
                     ErrorList.Add(err.ErrorMessage);
 
-            return new HttpResponseMessage(HttpStatusCode.BadRequest)
-            {
-                Content = new ObjectContent<List<string>>(ErrorList, new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorList);
 
         }
 
-       [HttpPut]
+        [HttpPut]
         [Route("api/PresentDay/UpdatePresentDay")]
         public HttpResponseMessage UpdatePresentDay([FromBody]PresentDay value)
         {
-
             if (ModelState.IsValid)
             {
-                return (LogicPresentDay.UpdatePresent(value)) ?
-                    new HttpResponseMessage(HttpStatusCode.OK) :
-                    new HttpResponseMessage(HttpStatusCode.BadRequest)
-                    {
-                        Content = new ObjectContent<String>("Can not update in DB", new JsonMediaTypeFormatter())
-                    };
+                return LogicPresentDay.UpdatePresent(value) ?
+                       Request.CreateResponse(HttpStatusCode.OK) :
+                     Request.CreateResponse(HttpStatusCode.BadRequest, "Can not update in DB");
+
             };
 
             List<string> ErrorList = new List<string>();
@@ -127,21 +72,19 @@ namespace webAPI_tasks.Controllers
                 foreach (var err in item.Errors)
                     ErrorList.Add(err.ErrorMessage);
 
-            return new HttpResponseMessage(HttpStatusCode.BadRequest)
-            {
-                Content = new ObjectContent<List<string>>(ErrorList, new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorList);
+
         }
 
-        // DELETE: api/PresentDay/4
+
+        [HttpDelete]
+        [Route("api/PresentDay/RemovePresent")]
         public HttpResponseMessage Delete(int id)
         {
-            return (LogicPresentDay.RemovePresent(id)) ?
-                    new HttpResponseMessage(HttpStatusCode.OK) :
-                    new HttpResponseMessage(HttpStatusCode.BadRequest)
-                    {
-                        Content = new ObjectContent<String>("Can not remove from DB", new JsonMediaTypeFormatter())
-                    };
+            return LogicPresentDay.RemovePresent(id) ?
+                Request.CreateResponse(HttpStatusCode.OK) :
+                     Request.CreateResponse(HttpStatusCode.BadRequest, "Can not remove from DB");
+
         }
     }
 }

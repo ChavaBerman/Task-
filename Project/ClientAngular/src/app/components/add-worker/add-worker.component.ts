@@ -47,7 +47,7 @@ export class AddWorkerComponent implements OnInit {
   changeManager(event: Event) {
     let selectedOptions = event.target['options'];
     let status = this.statusArray[selectedOptions.selectedIndex];
-    if (status.StatusName != 'TeamHead') {
+    if (status.statusName != 'TeamHead') {
       this.userService.getAllTeamHeads().subscribe((res) => {
         this.managersArray = res;
       });

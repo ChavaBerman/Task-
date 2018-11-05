@@ -1,0 +1,16 @@
+<div>
+  {{project.projectName}}
+  {{project.customerName}}
+  {{project.numHourForProject}}
+  {{project.dateBegin | date: 'dd/MM/yyyy'}}
+  {{project.dateEnd | date: 'dd/MM/yyyy'}}
+  {{project.isFinish}}
+  {{project.manager}}
+  <div *ngFor="let department of project.hoursForDepartment">
+{{project.hoursForDepartment}}
+  </div>
+  <input type="button" (click)="showWorker()" value="show workers">
+  <input type="button" (click)="addWorkerToProject()" value="add worker to project">
+  <input type="button" (click)="editProject()" value="edit project">
+  <input type="button" (click)="deleteProject()" value="delete project">
+</div>

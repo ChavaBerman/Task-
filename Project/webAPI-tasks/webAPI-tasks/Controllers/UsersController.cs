@@ -21,109 +21,69 @@ namespace webAPI_tasks.Controllers
         [Route("api/Users/getAllUsers")]
         public HttpResponseMessage Get()
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-
-                Content = new ObjectContent<List<User>>(LogicManager.GetAllUsers(), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.GetAllUsers());
         }
+
         [HttpGet]
         [Route("api/Users/GetAllTeamHeads")]
         public HttpResponseMessage GetAllTeamHeads()
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-
-                Content = new ObjectContent<List<User>>(LogicManager.GetAllTeamHeads(), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.GetAllTeamHeads());
         }
+
         [HttpGet]
         [Route("api/Users/GetAllWorkers")]
         public HttpResponseMessage GetAllWorkers()
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-
-                Content = new ObjectContent<List<User>>(LogicManager.GetAllWorkers(), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.GetAllWorkers());
         }
+
         [HttpGet]
         [Route("api/Users/GetAllowedWorkers/{id}")]
         public HttpResponseMessage GetAllowedWorkers(int id)
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-
-                Content = new ObjectContent<List<User>>(LogicManager.GetAllowedWorkers(id), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.GetAllowedWorkers(id));
         }
+
+
         [HttpGet]
         [Route("api/Users/GetWorkersByTeamhead/{id}")]
         public HttpResponseMessage GetWorkersByTeamhead(int id)
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-
-                Content = new ObjectContent<List<User>>(LogicManager.GetWorkersByTeamhead(id), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.GetWorkersByTeamhead(id));
         }
+
         [HttpGet]
         [Route("api/Users/GetWorkersDictionary/{id}")]
         public HttpResponseMessage GetWorkersDictionary(int id)
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-
-                Content = new ObjectContent<Dictionary<string, decimal>>(LogicManager.GetWorkersDictionary(id), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.GetWorkersDictionary(id));
         }
+
         [HttpGet]
         [Route("api/Users/getUserDetails/{id}")]
-        // GET: api/Users/5
-        /// <summary>
-        /// get details user by id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public HttpResponseMessage Get(int id)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new ObjectContent<User>(LogicManager.GetUserDetails(id), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.GetUserDetails(id));
         }
-
-
 
 
         [HttpPut]
-        [Route("api/sendMessageToManager/{idUser}/{subject}")]
+        [Route("api/Users/sendMessageToManager/{idUser}/{subject}")]
         public HttpResponseMessage sendMessageToManager(int idUser,string subject, [FromBody]string message)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new ObjectContent<bool>(LogicManager.sendEmailToManager(idUser, message,subject), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicManager.sendEmailToManager(idUser, message, subject));
         }
 
-        [Route("api/addUser")]
-        // POST: api/Users
+        [HttpPost]
+        [Route("api/Users/addUser")]
         public HttpResponseMessage Post([FromBody]User value)
         {
             if (ModelState.IsValid)
             {
                 return (LogicManager.AddUser(value)) ?
-                   new HttpResponseMessage(HttpStatusCode.Created) :
-                   new HttpResponseMessage(HttpStatusCode.BadRequest)
-                   {
-                       Content = new ObjectContent<String>("Can not add to DB", new JsonMediaTypeFormatter())
-                   };
+                    Request.CreateResponse(HttpStatusCode.OK) :
+                    Request.CreateResponse(HttpStatusCode.BadRequest, "Can not add to DB");
             };
 
             List<string> ErrorList = new List<string>();
@@ -132,16 +92,11 @@ namespace webAPI_tasks.Controllers
             foreach (var item in ModelState.Values)
                 foreach (var err in item.Errors)
                     ErrorList.Add(err.ErrorMessage);
-
-            return new HttpResponseMessage(HttpStatusCode.BadRequest)
-            {
-                Content = new ObjectContent<List<string>>(ErrorList, new JsonMediaTypeFormatter())
-            };
-
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorList);
         }
 
         [HttpPost]
-        [Route("api/loginByPassword")]
+        [Route("api/Users/loginByPassword")]
    
         public HttpResponseMessage LoginByPassword([FromBody]LoginUser value)
         {
@@ -149,15 +104,10 @@ namespace webAPI_tasks.Controllers
             {
                 User user = LogicManager.GetUserDetailsByPassword(value.Password, value.UserName);
                 //TODO:TOKEN
-                return (user != null ?
-                   new HttpResponseMessage(HttpStatusCode.Created)
-                   {
-                       Content = new ObjectContent<User>(user, new JsonMediaTypeFormatter())
-                   } :
-                   new HttpResponseMessage(HttpStatusCode.BadRequest)
-                   {
-                       Content = new ObjectContent<String>("This user does not exist", new JsonMediaTypeFormatter())
-                   });
+                return user != null ?
+                    Request.CreateResponse(HttpStatusCode.Created,user) :
+                    Request.CreateResponse(HttpStatusCode.BadRequest, "This user does not exist");
+               
             };
 
             List<string> ErrorList = new List<string>();
@@ -167,43 +117,31 @@ namespace webAPI_tasks.Controllers
                 foreach (var err in item.Errors)
                     ErrorList.Add(err.ErrorMessage);
 
-            return new HttpResponseMessage(HttpStatusCode.BadRequest)
-            {
-                Content = new ObjectContent<List<string>>(ErrorList, new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorList);
 
         }
         [HttpPost]
-        [Route("api/LoginByComputerUser")]
+        [Route("api/Users/LoginByComputerUser")]
         public HttpResponseMessage LoginByComputerUser([FromBody]string ComputerUser)
         {
 
             User user = LogicManager.GetUserDetailsComputerUser(ComputerUser);
             //TODO:TOKEN
-            return (user != null ?
-               new HttpResponseMessage(HttpStatusCode.Created)
-               {
-                   Content = new ObjectContent<User>(user, new JsonMediaTypeFormatter())
-               } :
-               new HttpResponseMessage(HttpStatusCode.BadRequest)
-               {
-                   Content = new ObjectContent<String>("Can not add to DB", new JsonMediaTypeFormatter())
-               });
+            return user != null ?
+                 Request.CreateResponse(HttpStatusCode.Created, user) :
+                    Request.CreateResponse(HttpStatusCode.BadRequest, "Can not add to DB");
+           
         }
-
-        // PUT: api/Users/5
-
+        
+        [HttpPut]
+        [Route("api/Users/UpdateUser")]
         public HttpResponseMessage Put([FromBody]User value)
         {
-
             if (ModelState.IsValid)
             {
-                return (LogicManager.UpdateUser(value)) ?
-                    new HttpResponseMessage(HttpStatusCode.OK) :
-                    new HttpResponseMessage(HttpStatusCode.BadRequest)
-                    {
-                        Content = new ObjectContent<String>("Can not update in DB", new JsonMediaTypeFormatter())
-                    };
+                return LogicManager.UpdateUser(value) ?
+                     Request.CreateResponse(HttpStatusCode.OK) :
+                    Request.CreateResponse(HttpStatusCode.BadRequest, "Can not update in DB");
             };
 
             List<string> ErrorList = new List<string>();
@@ -213,22 +151,16 @@ namespace webAPI_tasks.Controllers
                 foreach (var err in item.Errors)
                     ErrorList.Add(err.ErrorMessage);
 
-            return new HttpResponseMessage(HttpStatusCode.BadRequest)
-            {
-                Content = new ObjectContent<List<string>>(ErrorList, new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorList);
         }
 
         [HttpDelete]
-        // DELETE: api/Users/5
+        [Route("api/Users/RemoveUser/{id}")]
         public HttpResponseMessage Delete(int id)
         {
-            return (LogicManager.RemoveUser(id)) ?
-                    new HttpResponseMessage(HttpStatusCode.OK) :
-                    new HttpResponseMessage(HttpStatusCode.BadRequest)
-                    {
-                        Content = new ObjectContent<String>("Can not remove from DB", new JsonMediaTypeFormatter())
-                    };
+            return LogicManager.RemoveUser(id)?
+                 Request.CreateResponse(HttpStatusCode.OK) :
+                    Request.CreateResponse(HttpStatusCode.BadRequest, "Can not remove from DB");
         }
     }
 }

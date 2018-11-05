@@ -14,8 +14,8 @@ namespace webAPI_tasks.Controllers
     [EnableCors("*", "*", "*")]
     public class TaskController : ApiController
     {
+        [HttpPost]
         [Route("api/Tasks/AddTask")]
-        // POST: api/Users
         public HttpResponseMessage Post([FromBody] Task value)
         {
             if (ModelState.IsValid)
@@ -34,10 +34,7 @@ namespace webAPI_tasks.Controllers
                 foreach (var err in item.Errors)
                     ErrorList.Add(err.ErrorMessage);
 
-            return new HttpResponseMessage(HttpStatusCode.BadRequest)
-            {
-                Content = new ObjectContent<List<string>>(ErrorList, new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorList);
 
         }
 
@@ -45,20 +42,14 @@ namespace webAPI_tasks.Controllers
         [Route("api/Tasks/GetTasksWithUserAndProjectByProjectId/{projectId}")]
         public HttpResponseMessage GetTasksWithUserAndProjectByProjectId(int projectId)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new ObjectContent<List<Task>>(LogicTask.GetTasksWithUserAndProjectByProjectId(projectId), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicTask.GetTasksWithUserAndProjectByProjectId(projectId));
         }
 
         [HttpGet]
         [Route("api/Tasks/GetTasksWithUserAndProjectByUserId/{userId}")]
         public HttpResponseMessage GetTasksWithUserAndProjectByUserId(int userId)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new ObjectContent<List<Task>>(LogicTask.GetTasksWithUserAndProjectByUserId(userId), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicTask.GetTasksWithUserAndProjectByUserId(userId));
         }
 
         [HttpPut]
@@ -69,11 +60,8 @@ namespace webAPI_tasks.Controllers
             if (ModelState.IsValid)
             {
                 return (LogicTask.UpdateTask(value)) ?
-                    new HttpResponseMessage(HttpStatusCode.OK) :
-                    new HttpResponseMessage(HttpStatusCode.BadRequest)
-                    {
-                        Content = new ObjectContent<String>("Can not update in DB", new JsonMediaTypeFormatter())
-                    };
+                     Request.CreateResponse(HttpStatusCode.OK) :
+                    Request.CreateResponse(HttpStatusCode.BadRequest, "Can not update in DB");
             };
 
             List<string> ErrorList = new List<string>();
@@ -83,22 +71,14 @@ namespace webAPI_tasks.Controllers
                 foreach (var err in item.Errors)
                     ErrorList.Add(err.ErrorMessage);
 
-            return new HttpResponseMessage(HttpStatusCode.BadRequest)
-            {
-                Content = new ObjectContent<List<string>>(ErrorList, new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorList);
         }
 
         [HttpGet]
         [Route("api/Users/GetWorkerTasksDictionary/{id}")]
         public HttpResponseMessage GetWorkerTasksDictionary(int id)
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-
-                Content = new ObjectContent<Dictionary<string, decimal>>(LogicTask.GetWorkerTasksDictionary(id), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, LogicTask.GetWorkerTasksDictionary(id));
         }
     }
 }

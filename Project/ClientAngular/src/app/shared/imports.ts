@@ -1,13 +1,17 @@
 
 
 //-----------------Models-----------------
-export {User}from './models/user'
-export {Status}from './models/Status'
+export { User } from './models/user'
+export { Status } from './models/Status'
+export { Project } from './models/Project'
+export { Task } from './models/Task'
 
 
 //---------------Services----------------s
-export {UserService} from './services/user.service'
-export {StatusService} from './services/status.service'
+export { UserService } from './services/user.service'
+export { StatusService } from './services/status.service'
+export { ProjectService } from './services/project.service'
+export { TaskService } from './services/task.service'
 
 
 
@@ -27,6 +31,13 @@ export { ManageReportsComponent } from '../components/manage-reports/manage-repo
 export { ManagerHomeComponent } from '../components/manager-home/manager-home.component';
 
 //-----------validations-----------------
-export {checkStringLength,confirmPassword,checkEmail} from './validaitors/validators'
+export {
+    checkStringLength,
+    confirmPassword,
+    checkEmail,
+    createValidatorDateBegin,
+    validateDateEnd,
+    checkInt
+} from './validaitors/validators'
 
 //----------Others--------------------

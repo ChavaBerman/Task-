@@ -17,17 +17,9 @@ namespace webAPI_tasks.Controllers
     {
         [HttpGet]
         [Route("api/Status/GetAllstatuses")]
-        /// <summary>
-        /// get all statuss
-        /// </summary>
-        /// <returns>list statuss </returns>
-
         public HttpResponseMessage GetAllstatuses()
         {
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new ObjectContent<List<Status>>(Logicstatus.GetAllstatuses(), new JsonMediaTypeFormatter())
-            };
+            return Request.CreateResponse(HttpStatusCode.OK, Logicstatus.GetAllstatuses());
         }
 
     }
